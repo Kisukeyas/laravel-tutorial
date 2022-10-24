@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Folder;
 use App\Task;
 use App\Http\Requests\CreateTask;
+use App\Http\Requests\EditTask;
 
 class TaskController extends Controller
 {

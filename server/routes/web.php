@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\LoginController;
+
 Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 
 //フォルダ作成
@@ -23,3 +26,7 @@ Route::post('/folders/{id}/tasks/create', 'TaskController@create');
 //タスク編集
 Route::get('/folders/{id}/tasks/{task_id}/edit', 'TaskController@showEditForm')->name('tasks.edit');
 Route::post('/folders/{id}/tasks/{task_id}/edit', 'TaskController@edit');
+
+//ログイン処理
+Route::get('/login', [LoginController::class, 'index'])->name('login-index');
+Route::post('/login', [LoginController::class, 'result'])->name('login-result');
